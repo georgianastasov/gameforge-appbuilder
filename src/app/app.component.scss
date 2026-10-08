@@ -40,6 +40,21 @@
   min-width: 50px;
   min-height: 50px;
 }
+.group {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  position: relative;
+  width: 90%;
+  min-width: 90%;
+  max-width: 90%;
+}
+.group_1 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  position: relative;
+}
 .column-layout {
   display: flex;
   flex-direction: column;
@@ -224,6 +239,17 @@
   color: var(--ig-gray-800);
 }
 .nav-btn-home {
+  --foreground: var(--ig-gray-800);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.admin {
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+  flex-shrink: 0;
+}
+.home-button {
   --foreground: var(--ig-gray-800);
   --ig-size: var(--ig-size-medium);
   height: max-content;

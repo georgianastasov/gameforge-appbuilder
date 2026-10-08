@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { PCBuilderComponent } from './pc-builder/pc-builder.component';
 import { ComponentsComponent } from './components/components.component';
 import { BuildSummaryComponent } from './build-summary/build-summary.component';
+import { AdminBackofficeComponent } from './admin-backoffice/admin-backoffice.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,5 +16,7 @@ export const routes: Routes = [
   { path: 'pc-builder', component: PCBuilderComponent, data: { text: 'Pcbuilder' } },
   { path: 'components', component: ComponentsComponent, data: { text: 'Components' } },
   { path: 'build-summary', component: BuildSummaryComponent, data: { text: 'Build-Summary' } },
+  { path: 'admin-backoffice', component: AdminBackofficeComponent, data: { text: 'Admin-Backoffice' } },
+  { path: 'admin-login', component: AdminLoginComponent, data: { text: 'Admin-Login' } },
   { path: '**', component: NotFound } // must always be last
 ];

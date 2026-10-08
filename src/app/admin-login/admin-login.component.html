@@ -1,0 +1,103 @@
+<div class="column-layout column-layout_1">
+  <div class="row-layout row-layout_1">
+    <div class="column-layout column-layout_2">
+      <div class="column-layout admin-authentication-section">
+        <div class="column-layout admin-login-panel">
+          <div class="row-layout branding-header-row">
+            <igx-avatar shape="rounded" class="avatar">
+              <igx-icon class="icon">
+                security
+              </igx-icon>
+            </igx-avatar>
+            <igx-badge type="info" value="CONSOLE V2.8" class="console-v28"></igx-badge>
+          </div>
+          <div class="column-layout title-group">
+            <p class="ig-typography__overline gameforge-backoffice">
+              GAMEFORGE BACKOFFICE
+            </p>
+            <h3 class="admin-login">
+              Admin Login
+            </h3>
+            <p class="ig-typography__body-2 text">
+              Restricted gateway for GameForge administrators to manage hardware inventory, configure build presets, and audit component compatibility.
+            </p>
+          </div>
+          <form class="column-layout admin-credentials-form">
+            <igx-input-group type="border" class="admin-email-input">
+              <igx-prefix>
+                <igx-icon class="icon_1">
+                  badge
+                </igx-icon>
+              </igx-prefix>
+              <input type="email" [(ngModel)]="value" placeholder="staff.admin@gameforge.tech" required="true" igxInput #igxInput />
+              <label igxLabel>Administrator Email</label>
+              @if (igxInput.validity.valueMissing) {
+                <igx-hint>This field is required</igx-hint>
+              }
+            </igx-input-group>
+            <igx-input-group type="border" class="admin-email-input">
+              <igx-prefix>
+                <igx-icon class="icon_1">
+                  lock
+                </igx-icon>
+              </igx-prefix>
+              <input type="password" [(ngModel)]="value1" placeholder="••••••••••••" required="true" igxInput #igxInput1 />
+              <label igxLabel>Security Key / Password</label>
+              @if (igxInput1.validity.valueMissing) {
+                <igx-hint>This field is required</igx-hint>
+              }
+            </igx-input-group>
+            <div class="row-layout options-row">
+              <igx-checkbox labelPosition="after" [(ngModel)]="checked" class="remember-workstation">
+                Remember Workstation
+              </igx-checkbox>
+            </div>
+            <div class="column-layout actions-column">
+              <button igxButton="contained" type="button" (click)="snackbar.toggle()" class="sign-in-button">
+                <igx-icon class="icon">
+                  login
+                </igx-icon>
+                <span>Sign In</span>
+              </button>
+              <button igxButton="outlined" type="button" [routerLink]="[`/home`]" class="back-to-store-button">
+                <igx-icon class="icon_2">
+                  storefront
+                </igx-icon>
+                <span>Back to Store</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="row-layout system-status-telemetry-strip">
+          <div class="row-layout status-item-catalog">
+            <igx-icon class="icon_3">
+              dns
+            </igx-icon>
+            <p class="ig-typography__caption hardware-catalog-v-28-online">
+              Hardware Catalog: v2.8 Online
+            </p>
+          </div>
+          <div class="row-layout status-item-catalog">
+            <igx-icon class="icon_3">
+              check_circle
+            </igx-icon>
+            <p class="ig-typography__caption hardware-catalog-v-28-online">
+              Auth Service: CryoShield Active
+            </p>
+          </div>
+          <div class="row-layout status-item-catalog">
+            <igx-icon class="icon_3">
+              speed
+            </igx-icon>
+            <p class="ig-typography__caption hardware-catalog-v-28-online">
+              Session Latency: 12ms
+            </p>
+          </div>
+        </div>
+      </div>
+      <igx-snackbar actionText="Action" [displayTime]="3000" (clicked)="snackbar.toggle()" #snackbar class="snackbar">
+        Authenticating administrator credentials... Access granted.
+      </igx-snackbar>
+    </div>
+  </div>
+</div>
